@@ -4,4 +4,5 @@ INSERT INTO Orders (ID, CustomerID, DATE)
 START TRANSACTION;
 INSERT INTO OrderItems (ID, OrderID, ProductID, Count)
     VALUES (1, 1, 1, 1);
+UPDATE Products SET WarehouseAmount = WarehouseAmount - 1 WHERE ID = '1';
 COMMIT; 
