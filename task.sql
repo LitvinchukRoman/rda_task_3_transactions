@@ -1,11 +1,7 @@
--- Use our database
-USE ShopDB; 
-
--- Some data should be created outside the transaction (here)
-
--- Start the transaction 
-START TRANSACTION; 
-
--- And some data should be created inside the transaction 
-
+USE ShopDB;
+INSERT INTO Orders (ID, CustomerID, DATE)
+    VALUES (1, 1, '2023-01-01');
+START TRANSACTION;
+INSERT INTO OrderItems (ID, OrderID, ProductID, Count)
+    VALUES (1, 1, 1, 1);
 COMMIT; 
